@@ -5,8 +5,8 @@
 
 
 let rest = {
-    //host: 'http://localhost:8080/OpenAM-13.0.0-SNAPSHOT_20151116',
-    host: 'http://openam.mycomputer.com:8080/OpenAM-13.0.0-SNAPSHOT_20151116',
+    host: 'http://localhost:8888/openam',
+    //host: 'http://openam.mycomputer.com:8080/OpenAM-13.0.0-SNAPSHOT_20151116',
     get: function(path) {
         let url = this.host + path;
         return new Promise(function resolver(resolve, reject) {
@@ -24,7 +24,6 @@ let rest = {
                 dataType: 'json',
                 success: (data, textStatus, jqXHR)=>resolve(data),
                 error: res=>reject(res.status)
-                //error: res=>console.log(res.status)
             });
         });
     }
@@ -42,7 +41,7 @@ class LoginActions {
         };
 
         rest.post('/json/authenticate')
-            .then(success)
+            .then(callback)
             .catch(error);
     }
 }
