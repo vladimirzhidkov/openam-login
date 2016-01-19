@@ -7,16 +7,20 @@ import Router from 'react-router';
 import LoginActions from '../actions/login-actions';
 
 class LoginPage extends React.Component {
-    constructor() {
-        super();
-        this.state = {login:null, password:null};
-    }
+    //constructor() {
+    //    super();
+    //    this.state = {data: null};
+    //}
 
     componentWillMount(){
-        LoginActions.authenticate((data)=>console.log(data));
+        LoginActions.authenticate((data)=>this.setState(data));
     }
 
     render() {
+
+        if(this.state === null){
+            return <div></div>;
+        }
 
         let styleBanner = {textAlign:'center', backgroundColor:'rgba(242, 242, 242, 0.85)', padding:10, border:'2px solid #29abe1'};
         let styleLoginForm = {width:300, borderRadius:10, backgroundColor:'#f2f2f2', padding:30, display:'inline-block'};
@@ -37,19 +41,18 @@ class LoginPage extends React.Component {
                     <div className="form text-center" style={styleLoginForm}>
                         <p><img src="img/utah-id-logo.png"/></p>
 
-                        <input style={styleInput}
-                               size={20}
-                               className="form-control input-lg"
-                               placeholder="Login"
-                               autoFocus={true}
-                               onChange={event=>this.setState({login:event.target.value})}/>
-
-                        <input style={styleInput}
-                               size={20}
-                               className="form-control input-lg"
-                               type="password"
-                               placeholder="Password"
-                               onChange={event=>this.setState({password:event.target.value})}/>
+                        {
+                            this.state.callbacks.map((callback, index)=>
+                                <input key={index}
+                                    style={styleInput}
+                                    size={20}
+                                    className="form-control input-lg"
+                                    placeholder={callback.output[0].value.replace(/:/g, '')}
+                                    autoFocus={index ? false : true}
+                                    type={index ? 'password' : 'text'}
+                                    onChange={event=>callback.input[0].value = event.target.value}/>
+                            )
+                        }
 
                         <button style={styleLoginBtn}
                                 type="button"
@@ -68,7 +71,7 @@ class LoginPage extends React.Component {
     }
 
     onLoginButtonClick(){
-        console.log(this.state);
+        console.log(JSON.stringify(this.state));
     }
 }
 export default LoginPage;

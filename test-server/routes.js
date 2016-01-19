@@ -1,16 +1,17 @@
 'use strict';
 
 var express = require('express');
+var data = require('./data');
 
 var router = express.Router();
 
 router.route('/openam/json/authenticate')
     .post(function(req, res){
-        res.send(['test', 'test', 'test']);
+        res.send(data);
 
     })
     .get(function(req, res){
-        res.send(['test']);
+        res.send(data);
 
     });
 
