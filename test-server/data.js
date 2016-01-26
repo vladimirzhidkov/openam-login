@@ -34,6 +34,21 @@ module.exports =   {
                     "value": ""
                 }
             ]
+        },
+        {
+            "type": "TestCallback",
+            "output": [
+                {
+                    "name": "prompt",
+                    "value": "Test:"
+                }
+            ],
+            "input": [
+                {
+                    "name": "IDToken3",
+                    "value": ""
+                }
+            ]
         }
     ]
 };

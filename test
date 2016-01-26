@@ -1,11 +1,11 @@
-http://openam.forgerock.org/doc/bootstrap/dev-guide/index.html#about-openam-rest-api
+amAdmin, Password
 
 [
   {
-    "authId": "eyAidHlwIjogIkpXVCIsICJhbGciOiAiSFMyNTYiIH0.eyAib3RrIjogImUwdWprZnB0aHM1ZjNvMDFvaXVqYjdlOWdoIiwgInJlYWxtIjogImRjPW9wZW5hbSxkYz1mb3JnZXJvY2ssZGM9b3JnIiwgInNlc3Npb25JZCI6ICJBUUlDNXdNMkxZNFNmY3hFa1FpVHE5TzA3clFGTWZpbFZqWU9lNXVfX0xkUkdKUS4qQUFKVFNRQUNNREVBQWxOTEFCSXpOalV5TlRJNU56UXhOalEyT1RFNE9EY0FBbE14QUFBLioiIH0.U0Bp5jzRA6LfhJQlN9EFBrRLcDobYR0KhYS9VGfYmpQ",
+    "authId": "eyAidHlwIjogIkpXVCIsICJhbGciOiAiSFMyNTYiIH0.eyAib3RrIjogIjcyY2U1ZTkxdjFqZ2dhbm5sZ2I4dTZnczA5IiwgInJlYWxtIjogImRjPW9wZW5hbSxkYz1mb3JnZXJvY2ssZGM9b3JnIiwgInNlc3Npb25JZCI6ICJBUUlDNXdNMkxZNFNmY3lXWFlOQ1ZIVUZjcUZJZFYySll0QnN6emRJOUtxT2Z1WS4qQUFKVFNRQUNNREVBQWxOTEFCTXpPRE01TURJM09EUTVOVEEwT1RNM01ETXdBQUpUTVFBQSoiIH0.-M63sr0BJR3GosOjDeYMjqsJlpBmIxaz5A3pir8XuJU",
     "template": "",
     "stage": "DataStore1",
-    "header": "Sign in to test test test",
+    "header": "Sign in to OpenAM",
     "callbacks": [
       {
         "type": "NameCallback",
@@ -39,11 +39,6 @@ http://openam.forgerock.org/doc/bootstrap/dev-guide/index.html#about-openam-rest
       }
     ]
   },
-
-
-
-
-
   {
     "authId": "eyAidHlwIjogIkpXVCIsICJhbGciOiAiSFMyNTYiIH0.eyAib3RrIjogIjcxODM1Ym0zbDFvM3IzZWdzZGplZHUyNWhzIiwgInJlYWxtIjogImRjPW9wZW5hbSxkYz1mb3JnZXJvY2ssZGM9b3JnIiwgInNlc3Npb25JZCI6ICJBUUlDNXdNMkxZNFNmY3pRMlNITUxqLXVYQy1xaHdtZ0ZkWjdQX1FYMXN1cnR2TS4qQUFKVFNRQUNNREVBQWxOTEFCUXROVFEyT0RJM09ERTROakEzT1RrMU1qTTNOZ0FDVXpFQUFBLi4qIiB9.sUi_OcE7OYId8SGvo3w3tj5NcaBr-ShrX_QHuTXvOE4",
     "template": "",

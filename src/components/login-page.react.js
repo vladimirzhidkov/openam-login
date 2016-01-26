@@ -7,10 +7,12 @@ import Router from 'react-router';
 import LoginActions from '../actions/login-actions';
 
 class LoginPage extends React.Component {
-    //constructor() {
-    //    super();
-    //    this.state = {data: null};
-    //}
+    constructor() {
+        super();
+        this.resourceLink = decodeURIComponent(window.location.href);
+        this.resourceLink = this.resourceLink.substr(this.resourceLink.indexOf('?goto=') + '?goto='.length);
+        this.resourceLink = this.resourceLink.slice(0, this.resourceLink.indexOf('#/login-page'));
+    }
 
     componentWillMount(){
         LoginActions.authenticate((data)=>this.setState(data));
@@ -71,7 +73,11 @@ class LoginPage extends React.Component {
     }
 
     onLoginButtonClick(){
-        console.log(JSON.stringify(this.state));
+        let cb = data => {
+            document.cookie = 'iPlanetDirectoryPro=' + data.tokenId;
+            window.location.href = this.resourceLink;
+        };
+        LoginActions.authenticate(cb, JSON.stringify(this.state));
     }
 }
 export default LoginPage;
